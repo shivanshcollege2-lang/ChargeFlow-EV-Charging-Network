@@ -1,0 +1,151 @@
+{
+  "users": [
+    {
+      "id": "b54b47f3-f88f-4e5e-af7d-f30f67e10822",
+      "name": "Shivansh Mittal",
+      "email": "shivanshcollege2@gmail.com",
+      "passwordHash": "$2a$10$npWrCVlKbOfTopA6htLluu8mVITRU.henggxy18iMatIDDbIOdrKS",
+      "role": "driver",
+      "createdAt": "2026-09-08T14:39:21.271Z"
+    }
+  ],
+  "stations": [
+    {
+      "id": "ST-001",
+      "name": "ChargeFlow Connaught Place",
+      "address": "Block A, Connaught Place",
+      "city": "New Delhi",
+      "status": "Available",
+      "availablePorts": 5,
+      "totalPorts": 6,
+      "power": "120 kW",
+      "connector": "CCS2",
+      "pricePerKwh": 12
+    },
+    {
+      "id": "ST-002",
+      "name": "ChargeFlow Saket",
+      "address": "Select Citywalk, Saket",
+      "city": "New Delhi",
+      "status": "Available",
+      "availablePorts": 3,
+      "totalPorts": 4,
+      "power": "60 kW",
+      "connector": "CCS2",
+      "pricePerKwh": 11
+    },
+    {
+      "id": "ST-003",
+      "name": "ChargeFlow Aerocity",
+      "address": "Worldmark, Aerocity",
+      "city": "New Delhi",
+      "status": "Busy",
+      "availablePorts": 1,
+      "totalPorts": 4,
+      "power": "150 kW",
+      "connector": "CCS2",
+      "pricePerKwh": 13
+    },
+    {
+      "id": "ST-004",
+      "name": "ChargeFlow Sector 18",
+      "address": "Sector 18 Metro Plaza",
+      "city": "Noida",
+      "status": "Available",
+      "availablePorts": 4,
+      "totalPorts": 5,
+      "power": "100 kW",
+      "connector": "CCS2",
+      "pricePerKwh": 12
+    },
+    {
+      "id": "ST-005",
+      "name": "ChargeFlow Cyber Hub",
+      "address": "DLF Cyber Hub",
+      "city": "Gurugram",
+      "status": "Maintenance",
+      "availablePorts": 0,
+      "totalPorts": 4,
+      "power": "180 kW",
+      "connector": "CCS2",
+      "pricePerKwh": 14
+    },
+    {
+      "id": "ST-006",
+      "name": "ChargeFlow Nehru Place",
+      "address": "Nehru Place",
+      "city": "New Delhi",
+      "status": "Available",
+      "availablePorts": 2,
+      "totalPorts": 3,
+      "power": "90 kW",
+      "connector": "CCS2",
+      "pricePerKwh": 11
+    }
+  ],
+  "bookings": [
+    {
+      "id": "BK-44F165",
+      "userId": "b54b47f3-f88f-4e5e-af7d-f30f67e10822",
+      "stationId": "ST-001",
+      "stationName": "ChargeFlow Connaught Place",
+      "date": "2026-09-08",
+      "time": "09:30",
+      "duration": 30,
+      "status": "confirmed",
+      "createdAt": "2026-09-08T14:44:08.726Z"
+    }
+  ],
+  "sessions": [
+    {
+      "id": "SS-D71675",
+      "userId": "b54b47f3-f88f-4e5e-af7d-f30f67e10822",
+      "stationId": "ST-001",
+      "stationName": "ChargeFlow Connaught Place",
+      "startedAt": "2026-09-08T14:44:28.796Z",
+      "status": "completed",
+      "energyKwh": 0.42,
+      "cost": 5.04,
+      "endedAt": "2026-09-08T14:44:39.367Z",
+      "durationMinutes": 1
+    }
+  ],
+  "notifications": [
+    {
+      "id": "4d2ea30e-3813-4b49-aab0-5747036969f0",
+      "userId": "b54b47f3-f88f-4e5e-af7d-f30f67e10822",
+      "title": "Welcome to ChargeFlow",
+      "text": "Your driver account is ready.",
+      "type": "system",
+      "read": true,
+      "createdAt": "2026-09-08T14:39:21.273Z"
+    },
+    {
+      "id": "cc881d5e-76b2-4ebb-869a-42dea19a4ba7",
+      "userId": "b54b47f3-f88f-4e5e-af7d-f30f67e10822",
+      "title": "Booking confirmed",
+      "text": "ChargeFlow Connaught Place • 2026-09-08 at 09:30",
+      "type": "booking",
+      "read": true,
+      "createdAt": "2026-09-08T14:44:08.729Z"
+    },
+    {
+      "id": "8d872440-cfcf-40d1-b806-5368ff212c72",
+      "userId": "b54b47f3-f88f-4e5e-af7d-f30f67e10822",
+      "title": "Charging started",
+      "text": "ChargeFlow Connaught Place • SS-D71675",
+      "type": "session",
+      "read": true,
+      "createdAt": "2026-09-08T14:44:28.796Z"
+    },
+    {
+      "id": "ad4ac6af-22e3-4cba-b6ed-85b9e88dcd97",
+      "userId": "b54b47f3-f88f-4e5e-af7d-f30f67e10822",
+      "title": "Charging session completed",
+      "text": "0.42 kWh • ₹5.04",
+      "type": "session",
+      "read": false,
+      "createdAt": "2026-09-08T14:44:39.371Z"
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+-- Production-oriented schema reference for ChargeFlow.
+CREATE DATABASE IF NOT EXISTS chargeflow;
+USE chargeflow;
+CREATE TABLE users (user_id INT AUTO_INCREMENT PRIMARY KEY, name VARCHAR(100) NOT NULL, email VARCHAR(150) UNIQUE NOT NULL, password_hash VARCHAR(255) NOT NULL, role ENUM('driver','operator') DEFAULT 'driver', created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP);
+CREATE TABLE stations (station_id INT AUTO_INCREMENT PRIMARY KEY, name VARCHAR(150) NOT NULL, address VARCHAR(255) NOT NULL, city VARCHAR(80) NOT NULL, status ENUM('Available','Busy','Maintenance') DEFAULT 'Available', created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP);
+CREATE TABLE charging_points (point_id INT AUTO_INCREMENT PRIMARY KEY, station_id INT NOT NULL, connector VARCHAR(50) NOT NULL, power_kw DECIMAL(8,2) NOT NULL, rate DECIMAL(8,2) NOT NULL, status ENUM('Available','Busy','Maintenance') DEFAULT 'Available', FOREIGN KEY (station_id) REFERENCES stations(station_id));
+CREATE TABLE bookings (booking_id INT AUTO_INCREMENT PRIMARY KEY, user_id INT NOT NULL, point_id INT NOT NULL, start_time DATETIME NOT NULL, end_time DATETIME NOT NULL, status ENUM('BOOKED','CONFIRMED','CANCELLED','EXPIRED') DEFAULT 'BOOKED', created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP, FOREIGN KEY (user_id) REFERENCES users(user_id), FOREIGN KEY (point_id) REFERENCES charging_points(point_id));
+CREATE TABLE charging_sessions (session_id INT AUTO_INCREMENT PRIMARY KEY, booking_id INT NOT NULL, start_at DATETIME, end_at DATETIME, energy_kwh DECIMAL(10,2) DEFAULT 0, FOREIGN KEY (booking_id) REFERENCES bookings(booking_id));
+CREATE TABLE payments (payment_id INT AUTO_INCREMENT PRIMARY KEY, booking_id INT NOT NULL, amount DECIMAL(10,2) NOT NULL, status VARCHAR(30) DEFAULT 'PENDING', paid_at DATETIME, FOREIGN KEY (booking_id) REFERENCES bookings(booking_id));

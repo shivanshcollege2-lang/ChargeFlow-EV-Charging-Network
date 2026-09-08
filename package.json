@@ -1,0 +1,9 @@
+{
+  "name": "chargeflow-ev-charging-network",
+  "version": "1.0.0",
+  "private": true,
+  "description": "ChargeFlow - EV charging discovery, booking and session management demo",
+  "main": "server.js",
+  "scripts": { "start": "node server.js", "dev": "node server.js" },
+  "dependencies": { "bcryptjs": "^2.4.3", "express": "^4.21.2", "jsonwebtoken": "^9.0.2" }
+}
