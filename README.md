@@ -725,5 +725,3 @@ ChargeGrid demonstrates practical full-stack engineering across:
 The strongest engineering aspect is that booking is treated as a business transaction with authentication, validation, availability checks, conflict detection, persistence, and confirmation rather than a simple database insert.
 
 ---
-
-## Author
